@@ -67,7 +67,15 @@
             opacity: 0.9;
         }
 
-        /* Botão de Download */
+        /* Botões */
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
         .btn-download {
             display: inline-flex;
             align-items: center;
@@ -75,11 +83,11 @@
             background-color: white;
             color: var(--primary-color);
             padding: 15px 30px;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: bold;
             text-decoration: none;
             border-radius: 50px;
-            transition: transform 0.2s, box-shadow 0.2s;
+            transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
             box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
 
@@ -92,6 +100,21 @@
             width: 24px;
             height: 24px;
             fill: currentColor;
+        }
+
+        .btn-web {
+            background-color: white;
+            color: var(--primary-color);
+        }
+
+        .btn-apk {
+            background-color: rgba(255, 255, 255, 0.15);
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-apk:hover {
+            background-color: rgba(255, 255, 255, 0.3);
         }
 
         /* Features */
@@ -145,14 +168,23 @@
     <section class="hero">
         <div class="container">
             <h2>Calcule materiais com precisão</h2>
-            <p>O aplicativo oficial para dimensionamento e cálculo de materiais da Bacia de Evapotranspiração. Gere relatórios em PDF e compartilhe direto no WhatsApp.</p>
+            <p>O aplicativo oficial para dimensionamento e cálculo de materiais da Bacia de Evapotranspiração. Acesse no navegador ou baixe para Android.</p>
             
-            <a href="app/v1.1.0-beta.apk" class="btn-download" download>
-                <svg viewBox="0 0 24 24">
-                    <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
-                </svg>
-                BAIXAR APK (Android)
-            </a>
+            <div class="cta-buttons">
+                <a href="https://rafael1102.github.io/BET-APP/" class="btn-download btn-web" target="_blank" rel="noopener noreferrer">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                    </svg>
+                    TESTAR MODO WEB
+                </a>
+
+                <a href="app/v1.1.0-beta.apk" class="btn-download btn-apk" download>
+                    <svg viewBox="0 0 24 24">
+                        <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+                    </svg>
+                    BAIXAR APK (Android)
+                </a>
+            </div>
         </div>
     </section>
 
@@ -173,13 +205,11 @@
         </div>
 
         <div class="instrucoes">
-            <h3 style="color: var(--primary-color); margin-bottom: 10px;">Como instalar:</h3>
-            <ol style="margin-left: 20px; line-height: 1.8;">
-                <li>Clique no botão de download acima.</li>
-                <li>Abra o arquivo <strong>app-release.apk</strong> baixado no seu celular.</li>
-                <li>Se o Android pedir permissão, clique em "Configurações" e ative <strong>"Permitir desta fonte"</strong>.</li>
-                <li>Clique em "Instalar" e pronto!</li>
-            </ol>
+            <h3 style="color: var(--primary-color); margin-bottom: 10px;">Como Acessar:</h3>
+            <ul style="margin-left: 20px; line-height: 1.8; list-style-type: square;">
+                <li><strong>Modo Web (Direto no Navegador):</strong> Clique no botão <strong>"TESTAR MODO WEB"</strong> acima para usar o aplicativo imediatamente sem necessidade de instalação.</li>
+                <li><strong>Aplicativo Android (APK):</strong> Clique em <strong>"BAIXAR APK"</strong>, abra o arquivo <code>v1.1.0-beta.apk</code> no seu celular Android e confirme a instalação (conceda a permissão para instalar fontes desconhecidas se solicitado).</li>
+            </ul>
         </div>
     </section>
 
